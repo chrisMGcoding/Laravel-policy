@@ -16,6 +16,8 @@
 
     @include('partials.NavBack')
 
+    @include('test');
+
     @yield('content')
     
 </body>

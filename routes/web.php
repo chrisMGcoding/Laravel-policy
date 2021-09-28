@@ -36,11 +36,11 @@ Route::resource('/articles', ArticleController::class);
 
 Route::resource('/commentaires', CommentaireController::class);
 
+Route::resource('/testimonials', TestimonialController::class);
+
 Route::get('/contacts', function () {
     return view('back.contact');
 })->middleware(['auth', 'admin'])->name('contacts');
-
-Route::resource('/testimonials', TestimonialController::class);
 
 
 require __DIR__.'/auth.php';

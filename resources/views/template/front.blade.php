@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <link rel="stylesheet" href="{{asset('css/tailwind.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('css/tailwind.css')}}"> --}}
 
     <script src="{{asset('js/app.js')}}"></script>
-    <script src="{{asset('js/tailwind.js')}}"></script>
+    {{-- <script src="{{asset('js/tailwind.js')}}"></script> --}}
 
     <title>Document</title>
 
