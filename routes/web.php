@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CommentaireController;
+use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,31 +22,25 @@ Route::get('/', function () {
     return view('welcome');
 })->name('accueil');
 
-Route::get('/testimonials', function () {
-    return view('welcome');
-})->name('testimoniale');
+Route::get('/testimoniales', function () {
+    return view('pages.testimonials');
+})->name('testimoniales');
 
 // ------------ BACK -------------
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth', 'admin'])->name('dashboard');
 
-Route::get('/articles', function () {
-    return view('back.articles');
-})->middleware(['auth'])->name('articles');
+Route::resource('/articles', ArticleController::class);
 
-Route::get('/commentaires', function () {
-    return view('back.commentaires');
-})->middleware(['auth'])->name('commentaires');
+Route::resource('/commentaires', CommentaireController::class);
 
 Route::get('/contacts', function () {
     return view('back.contact');
-})->middleware(['auth'])->name('contacts');
+})->middleware(['auth', 'admin'])->name('contacts');
 
-Route::get('/testimonials', function () {
-    return view('back.testimonials');
-})->middleware(['auth'])->name('testimonials');
+Route::resource('/testimonials', TestimonialController::class);
 
 
 require __DIR__.'/auth.php';
